@@ -1,0 +1,121 @@
+[
+  {
+    "Id": 1,
+    "title": "New Task Assignment",
+    "message": "You have been assigned to 'Implement user authentication' in the FlowBoard project",
+    "type": "task_assignment",
+    "priority": "high",
+    "isRead": false,
+    "timestamp": "2024-01-15T10:30:00Z",
+    "project": "FlowBoard",
+    "assignee": {
+      "name": "Sarah Johnson",
+      "avatar": "https://images.unsplash.com/photo-1494790108755-2616b612b5-bc?w=150&h=150&fit=crop&crop=face"
+    }
+  },
+  {
+    "Id": 2,
+    "title": "Task Due Tomorrow",
+    "message": "The task 'Design system components' is due tomorrow",
+    "type": "task_due",
+    "priority": "medium",
+    "isRead": false,
+    "timestamp": "2024-01-15T09:15:00Z",
+    "project": "FlowBoard"
+  },
+  {
+    "Id": 3,
+    "title": "Project Update",
+    "message": "FlowBoard project milestone 'Alpha Release' has been completed",
+    "type": "project_update",
+    "priority": "low",
+    "isRead": true,
+    "timestamp": "2024-01-15T08:45:00Z",
+    "project": "FlowBoard"
+  },
+  {
+    "Id": 4,
+    "title": "Team Mention",
+    "message": "Mike Chen mentioned you in a comment: 'Great work on the API integration @you!'",
+    "type": "team_mention",
+    "priority": "medium",
+    "isRead": false,
+    "timestamp": "2024-01-14T16:20:00Z",
+    "project": "E-commerce Platform",
+    "assignee": {
+      "name": "Mike Chen",
+      "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face"
+    }
+  },
+  {
+    "Id": 5,
+    "title": "Deadline Reminder",
+    "message": "Project 'Mobile App Redesign' final deadline is in 3 days",
+    "type": "deadline_reminder",
+    "priority": "high",
+    "isRead": false,
+    "timestamp": "2024-01-14T14:00:00Z",
+    "project": "Mobile App Redesign"
+  },
+  {
+    "Id": 6,
+    "title": "System Update",
+    "message": "FlowBoard will undergo maintenance this weekend from 2-4 AM EST",
+    "type": "system",
+    "priority": "low",
+    "isRead": true,
+    "timestamp": "2024-01-14T12:30:00Z"
+  },
+  {
+    "Id": 7,
+    "title": "New Task Assignment",
+    "message": "You have been assigned to 'Write API documentation' in the Backend Services project",
+    "type": "task_assignment",
+    "priority": "medium",
+    "isRead": true,
+    "timestamp": "2024-01-14T11:00:00Z",
+    "project": "Backend Services",
+    "assignee": {
+      "name": "Emily Davis",
+      "avatar": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face"
+    }
+  },
+  {
+    "Id": 8,
+    "title": "Task Completed",
+    "message": "Alex Wilson completed the task 'Database optimization' ahead of schedule",
+    "type": "project_update",
+    "priority": "low",
+    "isRead": true,
+    "timestamp": "2024-01-13T17:45:00Z",
+    "project": "Backend Services",
+    "assignee": {
+      "name": "Alex Wilson",
+      "avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face"
+    }
+  },
+  {
+    "Id": 9,
+    "title": "Due Date Changed",
+    "message": "The due date for 'UI Testing' has been moved to January 20th",
+    "type": "project_update",
+    "priority": "medium",
+    "isRead": false,
+    "timestamp": "2024-01-13T15:30:00Z",
+    "project": "Quality Assurance"
+  },
+  {
+    "Id": 10,
+    "title": "Team Mention",
+    "message": "Lisa Park mentioned you in a comment: 'Can you review the latest designs @you?'",
+    "type": "team_mention",
+    "priority": "medium",
+    "isRead": true,
+    "timestamp": "2024-01-13T13:15:00Z",
+    "project": "Mobile App Redesign",
+    "assignee": {
+      "name": "Lisa Park",
+      "avatar": "https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?w=150&h=150&fit=crop&crop=face"
+    }
+  }
+]

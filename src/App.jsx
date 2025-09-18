@@ -7,6 +7,8 @@ import Projects from "@/components/pages/Projects";
 import Board from "@/components/pages/Board";
 import Timeline from "@/components/pages/Timeline";
 import Team from "@/components/pages/Team";
+import NotificationCenter from "@/components/pages/NotificationCenter";
+import NotificationPreferences from "@/components/pages/NotificationPreferences";
 
 function App() {
   return (
@@ -14,7 +16,7 @@ function App() {
       <div className="min-h-screen bg-background">
         <Header />
         <main>
-          <Routes>
+<Routes>
             <Route path="/" element={<Dashboard />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/board" element={<Board />} />
@@ -22,6 +24,8 @@ function App() {
             <Route path="/timeline" element={<Timeline />} />
             <Route path="/timeline/:projectId" element={<Timeline />} />
             <Route path="/team" element={<Team />} />
+            <Route path="/notifications" element={<NotificationCenter />} />
+            <Route path="/notifications/preferences" element={<NotificationPreferences />} />
           </Routes>
         </main>
       </div>

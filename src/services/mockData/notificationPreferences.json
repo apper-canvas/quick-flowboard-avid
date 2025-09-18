@@ -1,0 +1,33 @@
+{
+  "enabled": true,
+  "doNotDisturb": false,
+  "soundEnabled": true,
+  "quietHoursStart": "22:00",
+  "quietHoursEnd": "08:00",
+  "emailDigestFrequency": "daily",
+  "tasks": {
+    "email": true,
+    "push": true,
+    "inApp": true
+  },
+  "projects": {
+    "email": true,
+    "push": false,
+    "inApp": true
+  },
+  "team": {
+    "email": false,
+    "push": true,
+    "inApp": true
+  },
+  "deadlines": {
+    "email": true,
+    "push": true,
+    "inApp": true
+  },
+  "system": {
+    "email": true,
+    "push": false,
+    "inApp": true
+  }
+}

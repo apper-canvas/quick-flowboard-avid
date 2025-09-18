@@ -1,14 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Chart from "react-apexcharts";
-import ApperIcon from "@/components/ApperIcon";
-import Badge from "@/components/atoms/Badge";
-import Avatar from "@/components/atoms/Avatar";
-import Loading from "@/components/ui/Loading";
-import Error from "@/components/ui/Error";
 import { projectService } from "@/services/api/projectService";
 import { taskService } from "@/services/api/taskService";
 import { userService } from "@/services/api/userService";
+import ApperIcon from "@/components/ApperIcon";
+import Button from "@/components/atoms/Button";
+import Badge from "@/components/atoms/Badge";
+import Avatar from "@/components/atoms/Avatar";
+import Projects from "@/components/pages/Projects";
+import Loading from "@/components/ui/Loading";
+import Error from "@/components/ui/Error";
 
 const DashboardStats = () => {
   const [stats, setStats] = useState({
@@ -263,20 +265,39 @@ const DashboardStats = () => {
           )}
         </motion.div>
 
-        {/* Recent Activity */}
+{/* Recent Activity */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3, delay: 0.7 }}
           className="lg:col-span-2 bg-surface border rounded-xl p-6 glassmorphism"
         >
-          <h3 className="text-lg font-semibold gradient-text mb-4">Recent Activity</h3>
+          <div className="flex items-center justify-between mb-4">
+            <h3 className="text-lg font-semibold gradient-text">Recent Activity</h3>
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => window.location.href = '/notifications'}
+              className="text-primary hover:text-primary/80"
+            >
+              View All
+              <ApperIcon name="ArrowRight" size={16} className="ml-1" />
+            </Button>
+          </div>
           <div className="space-y-3 max-h-80 overflow-y-auto">
             {recentActivity.map((task, index) => (
-              <div key={`${task.Id}-${index}`} className="flex items-center gap-3 p-3 rounded-lg bg-gray-50 hover:bg-gray-100 transition-colors">
-                <div className="w-2 h-2 bg-primary rounded-full"></div>
+              <div key={`${task.Id}-${index}`} className="flex items-center gap-3 p-3 rounded-lg bg-gray-50 hover:bg-gray-100 transition-colors group">
+                <div className="flex-shrink-0">
+                  <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
+                    <ApperIcon 
+                      name={task.priority === "high" ? "AlertTriangle" : "CheckCircle2"} 
+                      size={14} 
+                      className="text-primary"
+                    />
+                  </div>
+                </div>
                 <div className="flex-1 min-w-0">
-                  <p className="font-medium text-gray-900 line-clamp-1">{task.title}</p>
+                  <p className="font-medium text-gray-900 line-clamp-1 group-hover:text-primary transition-colors">{task.title}</p>
                   <div className="flex items-center gap-2 mt-1">
                     <Badge variant="default" size="sm">{task.projectName}</Badge>
                     <Badge 
@@ -288,6 +309,9 @@ const DashboardStats = () => {
                     >
                       {task.priority}
                     </Badge>
+                    <span className="text-xs text-gray-500 ml-auto">
+                      {new Date(task.dueDate).toLocaleDateString()}
+                    </span>
                   </div>
                 </div>
                 {task.assignee && (

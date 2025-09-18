@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
 import ApperIcon from "@/components/ApperIcon";
 import Button from "@/components/atoms/Button";
@@ -7,14 +7,32 @@ import UserMenu from "@/components/molecules/UserMenu";
 import Modal from "@/components/molecules/Modal";
 import CreateProjectForm from "@/components/molecules/CreateProjectForm";
 import { projectService } from "@/services/api/projectService";
-
+import { notificationService } from "@/services/api/notificationService";
 const Header = () => {
   const location = useLocation();
-  const navigate = useNavigate();
+const navigate = useNavigate();
   const { projectId } = useParams();
   const [showCreateProject, setShowCreateProject] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [unreadCount, setUnreadCount] = useState(0);
 
+  useEffect(() => {
+    const loadUnreadCount = async () => {
+      try {
+        const notifications = await notificationService.getAll();
+        const unread = notifications.filter(n => !n.isRead).length;
+        setUnreadCount(unread);
+      } catch (error) {
+        console.error('Failed to load notification count:', error);
+      }
+    };
+
+    loadUnreadCount();
+    
+    // Poll for updates every 30 seconds
+    const interval = setInterval(loadUnreadCount, 30000);
+    return () => clearInterval(interval);
+  }, []);
   const navigationItems = [
     { name: "Dashboard", href: "/", icon: "Home" },
     { name: "Projects", href: "/projects", icon: "FolderOpen" },
@@ -84,7 +102,21 @@ const Header = () => {
             </div>
 
             {/* Right Side */}
-            <div className="flex items-center gap-4">
+<div className="flex items-center gap-4">
+              {/* Notification Bell */}
+              <button
+                onClick={() => navigate('/notifications')}
+                className="relative p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-full transition-all duration-200"
+                aria-label="Notifications"
+              >
+                <ApperIcon name="Bell" size={20} />
+                {unreadCount > 0 && (
+                  <span className="absolute -top-1 -right-1 bg-error text-white text-xs rounded-full h-5 w-5 flex items-center justify-center font-medium">
+                    {unreadCount > 9 ? '9+' : unreadCount}
+                  </span>
+                )}
+              </button>
+
               <Button
                 onClick={() => setShowCreateProject(true)}
                 className="hidden sm:flex gap-2 bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90"
@@ -94,7 +126,6 @@ const Header = () => {
               </Button>
 
               <UserMenu />
-
               {/* Mobile menu button */}
               <Button
                 variant="ghost"
