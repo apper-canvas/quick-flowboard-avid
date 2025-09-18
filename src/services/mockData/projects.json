@@ -1,0 +1,42 @@
+[
+  {
+    "Id": 1,
+    "name": "FlowBoard App Development",
+    "description": "Build a comprehensive project management platform with Kanban boards, timeline views, and team collaboration features",
+    "status": "active",
+    "createdAt": "2024-01-15T09:00:00Z",
+    "members": [1, 2, 3, 4]
+  },
+  {
+    "Id": 2,
+    "name": "Mobile App Design System",
+    "description": "Create a unified design system for all mobile applications including components, patterns, and guidelines",
+    "status": "active", 
+    "createdAt": "2024-02-01T10:30:00Z",
+    "members": [2, 3, 5]
+  },
+  {
+    "Id": 3,
+    "name": "Customer Analytics Dashboard",
+    "description": "Develop real-time analytics dashboard for tracking customer behavior and business metrics",
+    "status": "completed",
+    "createdAt": "2024-01-10T14:15:00Z",
+    "members": [1, 4, 5]
+  },
+  {
+    "Id": 4,
+    "name": "E-commerce Platform Redesign",
+    "description": "Complete redesign of the e-commerce platform with improved UX and modern tech stack",
+    "status": "active",
+    "createdAt": "2024-02-10T11:00:00Z",
+    "members": [1, 2, 3, 4, 5]
+  },
+  {
+    "Id": 5,
+    "name": "API Integration Framework",
+    "description": "Build a reusable framework for integrating third-party APIs across all applications",
+    "status": "inactive",
+    "createdAt": "2024-01-25T16:45:00Z",
+    "members": [3, 4]
+  }
+]

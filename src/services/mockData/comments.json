@@ -1,0 +1,42 @@
+[
+  {
+    "Id": 1,
+    "taskId": 1,
+    "authorId": 2,
+    "content": "I've completed the initial design mockups. The drag-and-drop interaction needs some refinement based on user feedback.",
+    "createdAt": "2024-03-12T14:30:00Z",
+    "parentId": null
+  },
+  {
+    "Id": 2,
+    "taskId": 1,
+    "authorId": 1,
+    "content": "Great work! Can you also add the visual indicators for different task priorities?",
+    "createdAt": "2024-03-12T15:45:00Z",
+    "parentId": 1
+  },
+  {
+    "Id": 3,
+    "taskId": 2,
+    "authorId": 3,
+    "content": "The drag and drop is working well on desktop. Testing mobile responsiveness now.",
+    "createdAt": "2024-03-15T10:20:00Z",
+    "parentId": null
+  },
+  {
+    "Id": 4,
+    "taskId": 2,
+    "authorId": 1,
+    "content": "@marcus.williams make sure to test on various screen sizes including tablets.",
+    "createdAt": "2024-03-15T11:00:00Z",
+    "parentId": 3
+  },
+  {
+    "Id": 5,
+    "taskId": 5,
+    "authorId": 5,
+    "content": "Authentication system is nearly complete. JWT tokens are working and password hashing is implemented.",
+    "createdAt": "2024-03-16T16:15:00Z",
+    "parentId": null
+  }
+]
